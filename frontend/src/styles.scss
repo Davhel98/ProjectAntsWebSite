@@ -13,10 +13,18 @@
 /* Reset */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { /* Background master applicato qui così vale per tutte le pagine */
+html { /* Background master applicato qui così vale per tutte le pagine
+  Ordine layers (primo disegnato sopra):
+    1. Overlay semi-trasparente (linear-gradient var(--color-bg-overlay-*)))
+    2. Immagine principale
+  Se l'immagine non viene caricata rimane il gradient overlay (che però qui è trasparente, quindi vedresti il colore di default del browser). 
+  Non serve più il pseudo-elemento ::before: era ridondante e in alcuni casi poteva creare anomalie di stacking.
+*/
   min-height: 100%;
-  background: linear-gradient(var(--color-bg-overlay-1), var(--color-bg-overlay-2)),
-              url('/Content/images/01_Title_background.png') center/cover fixed no-repeat;
+  background:
+    linear-gradient(var(--color-bg-overlay-1), var(--color-bg-overlay-2)),
+    url('/Content/images/01_Title_background.png') center/cover fixed no-repeat;
+  background-attachment: fixed;
 }
 
 body {
@@ -26,13 +34,13 @@ body {
   min-height: 100%;
 }
 
-html::before { /* Fallback gradient se l'immagine manca */
-  content: '';
-  position: fixed;
-  inset: 0;
-  background: linear-gradient(135deg,#0d0d10,#102033,#0a2233);
-  z-index: -2;
-}
+/* Se vuoi un fallback pieno (senza trasparenza) al posto dell'immagine (non raccomandato salvo necessità):
+   Aggiungi un ulteriore gradient come primo layer nel background sopra, es:
+   background:
+      linear-gradient(135deg,#0d0d10,#102033,#0a2233),
+      linear-gradient(var(--color-bg-overlay-1), var(--color-bg-overlay-2)),
+      url('/Content/images/01_Title_background.png') center/cover fixed no-repeat;
+*/
 
 /* Se vuoi un velo aggiuntivo regolabile, decommenta:
 body::before {
