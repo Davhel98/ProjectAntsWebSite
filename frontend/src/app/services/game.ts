@@ -20,13 +20,10 @@ export class GameService {
           title: 'Welcome to Project Ants',
           version: '1.0.0',
           features: [
-            'Realistic ant colony simulation',
-            'Advanced AI behavior',
-            'Beautiful 3D graphics',
-            'Multiplayer support'
+
           ],
           trailer: {
-            youtubeId: '_aTRBidF26o',
+            youtubeId: 'BUVdq6scQiE',
             title: 'Project Ants Game Trailer'
           }
         });

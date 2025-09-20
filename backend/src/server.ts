@@ -28,14 +28,11 @@ app.get('/api/game-info', (req, res) => {
     title: 'Project Ants',
     version: '1.0.0',
     features: [
-      'Realistic ant colony simulation',
-      'Advanced AI behavior',
-      'Beautiful 3D graphics',
-      'Multiplayer support'
+
     ],
     trailer: {
-      youtubeId: '_aTRBidF26o', // Updated video ID
-      title: 'Project Ants Game Trailer'
+      youtubeId: 'BUVdq6scQiE', // Updated video ID
+      title: 'Trailer'
     }
   });
 });

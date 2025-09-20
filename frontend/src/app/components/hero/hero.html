@@ -4,8 +4,9 @@
     <div class="hero-title-image" role="img" aria-label="Project Ants Title">
       <img src="/Content/images/01_Title_text.png" alt="Project Ants" class="title-img" />
     </div>
-    <!-- YouTube Video Player -->
+    <!-- YouTube Video Player principale -->
     <div class="video-container">
+      <h3 class="extra-video-title">{{ gameInfo.trailer.title }}</h3>
       <div class="video-wrapper">
         <iframe 
           [src]="getYouTubeUrl()" 
@@ -14,6 +15,22 @@
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
           allowfullscreen>
         </iframe>
+      </div>
+    </div>
+
+    <!-- Video aggiuntivi -->
+    <div class="extra-videos" *ngIf="additionalVideos?.length">
+      <div class="extra-video" *ngFor="let vid of additionalVideos">
+        <h3 class="extra-video-title">{{ vid.title }}</h3>
+        <div class="video-wrapper">
+          <iframe 
+            [src]="vid.url" 
+            [title]="vid.title" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+        </div>
       </div>
     </div>
   </div>
