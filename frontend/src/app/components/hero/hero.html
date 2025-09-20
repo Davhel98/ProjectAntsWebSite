@@ -1,0 +1,24 @@
+<section class="hero-section">
+  <div class="hero-content">
+    <h2 class="hero-title">{{ gameInfo.title }}</h2>
+    <p class="hero-subtitle">{{ gameInfo.description }}</p>
+    
+    <!-- YouTube Video Player -->
+    <div class="video-container">
+      <div class="video-wrapper">
+        <iframe 
+          [src]="getYouTubeUrl()" 
+          [title]="gameInfo.trailer.title" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+    
+    <div class="cta-buttons">
+      <button class="btn btn-primary">Play Now</button>
+      <button class="btn btn-secondary">Learn More</button>
+    </div>
+  </div>
+</section>

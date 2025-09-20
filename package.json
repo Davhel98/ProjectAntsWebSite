@@ -1,0 +1,21 @@
+{
+  "name": "project-ants-website",
+  "version": "1.0.0",
+  "description": "Project Ants Game Showcase - Full Stack Application",
+  "scripts": {
+    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+    "start:frontend": "cd frontend && ng serve --host 0.0.0.0 --port 4200",
+    "start:backend": "cd backend && npm run dev",
+    "build": "npm run build:backend && npm run build:frontend",
+    "build:frontend": "cd frontend && ng build",
+    "build:backend": "cd backend && npm run build",
+    "test": "cd frontend && ng test",
+    "install:all": "npm install && cd frontend && npm install && cd ../backend && npm install"
+  },
+  "keywords": ["angular", "node.js", "typescript", "game", "showcase"],
+  "author": "Project Ants Team",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
