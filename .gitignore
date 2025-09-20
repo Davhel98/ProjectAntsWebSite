@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+*/node_modules/
+frontend/node_modules/
+backend/node_modules/
+
+# Build outputs
+dist/
+build/
+frontend/dist/
+backend/dist/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+/tmp/
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.local
+
+# Angular specific
+frontend/.angular/
+frontend/coverage/
+
+# TypeScript
+*.tsbuildinfo

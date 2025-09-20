@@ -1,0 +1,12 @@
+<div class="app-container">
+  <app-header [currentSection]="currentSection"></app-header>
+  <main class="main-content">
+    @if (currentSection === 'home') {
+      <app-hero></app-hero>
+    }
+    @if (currentSection === 'about') {
+      <app-about></app-about>
+    }
+  </main>
+  <app-footer></app-footer>
+</div>
