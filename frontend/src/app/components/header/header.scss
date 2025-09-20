@@ -24,6 +24,12 @@
   margin: 0;
 }
 
+.logo-img {
+  height: 60px;
+  width: auto;
+  max-width: 300px;
+}
+
 .nav-menu {
   display: flex;
   list-style: none;
@@ -67,6 +73,11 @@
   
   .logo h1 {
     font-size: 1.5rem;
+  }
+  
+  .logo-img {
+    height: 50px;
+    max-width: 200px;
   }
   
   .nav-link {

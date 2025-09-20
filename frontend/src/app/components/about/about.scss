@@ -1,0 +1,88 @@
+/* About Section */
+.about-section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-item {
+  margin-bottom: 50px;
+  text-align: left;
+}
+
+.about-item h3 {
+  font-size: 2.5rem;
+  color: #ff6b35;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.about-item p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #e0e0e0;
+  margin-bottom: 20px;
+}
+
+.approach-list {
+  margin-top: 30px;
+}
+
+.approach-point {
+  margin-bottom: 30px;
+  padding: 20px;
+  background: rgba(255, 107, 53, 0.1);
+  border-radius: 10px;
+  border-left: 4px solid #ff6b35;
+}
+
+.approach-point h4 {
+  font-size: 1.5rem;
+  color: #ff6b35;
+  margin-bottom: 10px;
+}
+
+.approach-point p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-item h3 {
+    font-size: 2rem;
+  }
+  
+  .about-item p {
+    font-size: 1.1rem;
+  }
+  
+  .approach-point h4 {
+    font-size: 1.3rem;
+  }
+  
+  .approach-point p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-item h3 {
+    font-size: 1.8rem;
+  }
+  
+  .about-item p {
+    font-size: 1rem;
+  }
+  
+  .approach-point {
+    padding: 15px;
+  }
+}

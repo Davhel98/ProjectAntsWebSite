@@ -18,7 +18,6 @@ export class GameService {
         // Return fallback data if API is not available
         return of({
           title: 'Welcome to Project Ants',
-          description: 'Experience the ultimate ant simulation game',
           version: '1.0.0',
           features: [
             'Realistic ant colony simulation',
@@ -27,7 +26,7 @@ export class GameService {
             'Multiplayer support'
           ],
           trailer: {
-            youtubeId: 'dQw4w9WgXcQ',
+            youtubeId: '_aTRBidF26o',
             title: 'Project Ants Game Trailer'
           }
         });

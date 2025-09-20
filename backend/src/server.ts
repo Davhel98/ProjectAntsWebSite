@@ -26,7 +26,6 @@ app.get('/api/health', (req, res) => {
 app.get('/api/game-info', (req, res) => {
   res.json({
     title: 'Project Ants',
-    description: 'Experience the ultimate ant simulation game',
     version: '1.0.0',
     features: [
       'Realistic ant colony simulation',
@@ -35,7 +34,7 @@ app.get('/api/game-info', (req, res) => {
       'Multiplayer support'
     ],
     trailer: {
-      youtubeId: 'dQw4w9WgXcQ', // Placeholder - replace with actual trailer
+      youtubeId: '_aTRBidF26o', // Updated video ID
       title: 'Project Ants Game Trailer'
     }
   });

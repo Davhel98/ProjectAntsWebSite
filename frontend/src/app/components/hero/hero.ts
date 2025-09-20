@@ -11,9 +11,8 @@ import { GameService } from '../../services/game';
 export class HeroComponent implements OnInit {
   gameInfo: any = {
     title: 'Welcome to Project Ants',
-    description: 'Experience the ultimate ant simulation game',
     trailer: {
-      youtubeId: 'dQw4w9WgXcQ',
+      youtubeId: '_aTRBidF26o',
       title: 'Project Ants Game Trailer'
     }
   };
