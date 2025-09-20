@@ -39,9 +39,3 @@ frontend/coverage/
 
 # TypeScript
 *.tsbuildinfo
-
-# Old static files (backup)
-css/
-js/
-images/
-index.html

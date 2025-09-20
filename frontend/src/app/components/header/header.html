@@ -1,13 +1,13 @@
 <header class="header">
   <nav class="navbar">
     <div class="logo">
-      <img src="https://github.com/user-attachments/assets/201fb15b-0911-4085-9c36-84d1b996dd12" alt="Project Ants" class="logo-img">
+      <h1 class="site-title font-ant">Project Ants</h1>
     </div>
-    <ul class="nav-menu">
-      <li><a href="#home" class="nav-link active">Home</a></li>
-      <li><a href="#gallery" class="nav-link hidden">Gallery</a></li>
-      <li><a href="#about" class="nav-link">About Us</a></li>
-      <li><a href="#contact" class="nav-link hidden">Contact</a></li>
+    <ul class="nav-menu font-ant">
+      <li><a href="#home" class="nav-link" [class.active]="currentSection === 'home'">Home</a></li>
+      <li><a href="#gallery" class="nav-link hidden" [class.active]="currentSection === 'gallery'">Gallery</a></li>
+      <li><a href="#about" class="nav-link" [class.active]="currentSection === 'about'">About Us</a></li>
+      <li><a href="#contact" class="nav-link hidden" [class.active]="currentSection === 'contact'">Contact</a></li>
     </ul>
   </nav>
 </header>

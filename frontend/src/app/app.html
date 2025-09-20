@@ -1,5 +1,5 @@
 <div class="app-container">
-  <app-header></app-header>
+  <app-header [currentSection]="currentSection"></app-header>
   <main class="main-content">
     @if (currentSection === 'home') {
       <app-hero></app-hero>

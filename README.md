@@ -16,106 +16,120 @@ A modern full-stack game showcase website built with Angular (frontend) and Node
 - TypeScript
 - RESTful API
 
+## ⚙️ Requirements
+- Node.js >= 20.19.0 (Angular 20 requirement)
+- npm (bundled with Node)
+
+## 🎨 Theme & Styling
+- Colore accent configurato in `:root` come `--color-accent: #26748EFF` (RGBA hex, alpha support).
+- Variabili definite in `frontend/src/styles.scss`:
+  - `--color-accent` / `--color-accent-rgb`
+  - `--color-text`, `--color-text-dim`
+  - Overlay gradient configurabile.
+- Per cambiare il tema modifica i valori nel blocco `:root`.
+- Background master applicato su `html` con immagine: `/Content/images/01_Title_background.png`.
+  - Se vuoi un background differente per una pagina futura, puoi sovrascrivere con una classe sul `body` o su un wrapper.
+
 ## 📁 Project Structure
 
 ```
 ├── frontend/           # Angular application
+│   ├── public/
+│   │   └── Content/    # (Assets statici personalizzati: background, logo, immagini)
 │   ├── src/
-│   │   ├── app/
-│   │   │   ├── components/     # Angular components
-│   │   │   ├── services/       # API services
-│   │   │   └── ...
-│   └── ...
+│   │   ├── index.html
+│   │   ├── main.ts
+│   │   ├── styles.scss # Usa path /Content per background
+│   │   └── app/
+│   │       └── components/
 ├── backend/            # Node.js API server
-│   ├── src/
-│   │   └── server.ts   # Express server
-│   └── ...
-├── package.json        # Root package.json with scripts
+│   ├── src/server.ts
+├── package.json        # Root scripts (start con concurrently)
 └── README.md
 ```
 
 ## 🛠️ Development Setup
 
-### Prerequisites
-- Node.js (v18+)
-- npm
-
-### Installation
-
-1. **Install all dependencies:**
-   ```bash
-   npm run install:all
-   ```
-
-2. **Start development servers:**
-   ```bash
-   npm start
-   ```
-   This runs both frontend (port 4200) and backend (port 3000) concurrently.
-
-### Individual Commands
-
-**Frontend only:**
-```bash
-npm run start:frontend
-# or
-cd frontend && ng serve
+### Installazione
+```powershell
+npm run install:all
 ```
 
-**Backend only:**
-```bash
-npm run start:backend
-# or
-cd backend && npm run dev
+### Avvio sviluppo (frontend + backend)
+```powershell
+npm start
+```
+- Frontend: http://localhost:4200
+- Backend API: http://localhost:3000
+
+### Avvii separati
+```powershell
+npm run start:backend   # solo API
+npm run start:frontend  # solo Angular
 ```
 
-**Build for production:**
-```bash
+### Build produzione
+```powershell
 npm run build
 ```
 
 ## 🌐 API Endpoints
+- `GET /api/health`
+- `GET /api/game-info`
+- `GET /api/gallery` (placeholder)
+- `POST /api/contact` (placeholder)
 
-- `GET /api/health` - API health check
-- `GET /api/game-info` - Game information and trailer details
-- `GET /api/gallery` - Game screenshots (future)
-- `POST /api/contact` - Contact form submission (future)
+## 🖼️ Gestione Asset (Cartella Content)
+Tutti gli asset personalizzabili (logo, background, immagini future) vanno in:
+```
+frontend/public/Content
+```
+File placeholders creati nel codice:
+- `/Content/logo-placeholder.png` → sostituisci con il tuo `logo.png`
+- `/Content/background-placeholder.jpg` → sostituisci con il tuo `background.jpg` (o .png)
 
-## 🎮 Features
+### Come sostituire
+1. Copia i tuoi file nella cartella `frontend/public/Content`.
+2. Mantieni i nomi (oppure modifica i path in:
+   - `frontend/src/styles.scss` (background)
+   - `frontend/src/app/components/header/header.html` (logo)
+3. Salva: Angular dev server ricarica automaticamente.
 
-- **Responsive Design**: Optimized for desktop and mobile devices
-- **YouTube Integration**: Game trailer video player
-- **Modern Architecture**: Component-based Angular frontend with TypeScript backend
-- **API Integration**: RESTful API for dynamic content
-- **Extensible Structure**: Ready for Gallery, About, and Contact sections
-- **Professional Styling**: Orange branding with smooth animations
+### Perché `public/Content`?
+`public/` è configurata come sorgente degli asset statici. I path assoluti `/Content/...` funzionano direttamente nel browser senza import JS.
 
-## 🔧 Development Notes
+## 🔧 Note di Sviluppo
+- Hot reload per frontend e backend.
+- CORS abilitato lato backend.
+- Assicurati di usare Node >= 20.19 per evitare errori CLI.
 
-- Frontend runs on `http://localhost:4200`
-- Backend API runs on `http://localhost:3000`
-- CORS is configured for local development
-- Hot reload enabled for both frontend and backend
-
-## 📱 Screenshots
-
-**Desktop View:**
-![Desktop Screenshot](https://github.com/user-attachments/assets/31935b92-a944-4f3c-abba-8114fdc5f87b)
-
-**Mobile View:**
-![Mobile Screenshot](https://github.com/user-attachments/assets/82c78136-d90f-4d53-80bf-d94bfb30cfac)
+## 🧪 Test
+Frontend unit test:
+```powershell
+cd frontend
+npm test
+```
+(Nessun test backend definito al momento.)
 
 ## 🚀 Deployment
+Frontend e backend sono separati; per servire build frontend dallo stesso server Node dovresti aggiungere middleware static (non ancora presente).
 
-The application is ready for deployment to platforms like:
-- Frontend: Vercel, Netlify, GitHub Pages
-- Backend: Heroku, DigitalOcean, Railway
+## 🧭 Roadmap Breve
+- Implementare gallery real
+- Form contatti con persistenza
+- Deploy unificato (reverse proxy o static serve)
+- Test end-to-end
 
-## 🎯 Future Enhancements
+## ❓ Troubleshooting Rapido
+| Problema | Soluzione |
+|----------|-----------|
+| Angular non parte / Node version error | Aggiorna Node >= 20.19 |
+| `Failed to read index HTML file` | Verifica esistenza `src/index.html` |
+| Logo non appare | Controlla path `/Content/logo.png` |
+| Background non cambia | Cache browser / nome file diverso da placeholder |
 
-- Add actual game trailer YouTube video ID
-- Implement Gallery section with game screenshots
-- Add About Us page with team information
-- Create Contact form with backend integration
-- Add user authentication (optional)
-- Implement content management system
+## 📝 Licenza
+ISC
+
+---
+Se vuoi, posso aggiungere un README dedicato al solo frontend con istruzioni asset più verbose. Fammi sapere.

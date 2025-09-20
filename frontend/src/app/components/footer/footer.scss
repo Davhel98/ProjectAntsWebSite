@@ -4,11 +4,11 @@
   text-align: center;
   padding: 30px 0;
   margin-top: auto;
-  border-top: 2px solid #ff6b35;
+  border-top: 2px solid var(--color-accent);
 }
 
 .footer p {
-  color: #e0e0e0;
+  color: var(--color-text-dim);
   font-size: 0.9rem;
   margin: 0;
 }
