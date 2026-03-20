@@ -26,9 +26,17 @@
 }
 
 .logo-img {
-  height: 60px;
+  height: auto;
+  max-height: 100%;
   width: auto;
   max-width: 300px;
+  display: block;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  height: 60px; /* Altezza desiderata per la navbar */
 }
 
 .nav-menu {

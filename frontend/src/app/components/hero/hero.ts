@@ -13,15 +13,14 @@ export class HeroComponent implements OnInit {
   gameInfo: any = {
     title: 'Welcome to Project Ants',
     trailer: {
-      youtubeId: 'BUVdq6scQiE',
+      youtubeId: 'OCaFT1hPhdU',
       title: 'Trailer'
     }
   };
 
   // Nuovi video aggiuntivi (ordine dopo il trailer principale)
   additionalVideos: { id: string; title: string; url?: SafeResourceUrl; }[] = [
-    { id: 'Njnlwp-Q1Eo', title: 'Walkthrough' },
-    { id: 'AOFmMNohCjc', title: 'Combos' }
+    
   ];
 
   constructor(
