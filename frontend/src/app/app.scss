@@ -7,4 +7,11 @@
 
 .main-content {
   flex: 1;
+  padding-top: 100px; /* Offset per header fisso */
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding-top: 120px; /* Offset maggiore per header su due righe in mobile */
+  }
 }
