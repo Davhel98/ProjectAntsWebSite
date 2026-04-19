@@ -31,7 +31,7 @@ app.get('/api/game-info', (req, res) => {
 
     ],
     trailer: {
-      youtubeId: 'OCaFT1hPhdU', // Updated video ID
+      youtubeId: '6pRplr-C7TY', // Updated video ID
       title: 'Trailer'
     }
   });

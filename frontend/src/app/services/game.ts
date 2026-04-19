@@ -23,7 +23,7 @@ export class GameService {
 
           ],
           trailer: {
-            youtubeId: 'OCaFT1hPhdU',
+            youtubeId: '6pRplr-C7TY',
             title: 'Project Ants Game Trailer'
           }
         });

@@ -13,7 +13,7 @@ export class HeroComponent implements OnInit {
   gameInfo: any = {
     title: 'Welcome to Project Ants',
     trailer: {
-      youtubeId: 'OCaFT1hPhdU',
+      youtubeId: '6pRplr-C7TY',
       title: 'Trailer'
     }
   };
